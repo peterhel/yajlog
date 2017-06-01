@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+test -d dist || mkdir dist
+cat src/index.js | java -jar ~/bin/compiler.jar > dist/index.js
+cat src/appender.js | java -jar ~/bin/compiler.jar > dist/appender.js
+
+node examples/with-tokens
