@@ -1,10 +1,10 @@
-# yajlog
+# yajlog - Yet another json logger
 
 A lib that wraps log2js and adds a default json appender.
 
     const yajlog = require('yajlog');
     
-    log2json.configure({
+    yajlog.configure({
         tokens: {
             devs: 'are kings',
             nerds: () => {
