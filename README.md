@@ -2,7 +2,7 @@
 
 A lib that wraps log2js and adds a default json appender.
 
-    const log2json = require('../dist');
+    const yajlog = require('yajlog');
     
     log2json.configure({
         tokens: {
