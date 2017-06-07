@@ -27,10 +27,11 @@ function jsonAppender(tokens) {
     }
 
     const strings = [];
+    const objects = [];
 
     loggingEvent.data.forEach(x => {
       if (typeof (x) === 'object') {
-        logObject.data = x;
+        objects.push(x);
         return;
       }
 
@@ -40,7 +41,8 @@ function jsonAppender(tokens) {
     });
 
     logObject.message = strings.join(' ');
-
+    logObject.data = objects.length === 1 ? objects[0] : objects;
+    
     consoleLog(JSON.stringify(logObject));
   };
 }
