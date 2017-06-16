@@ -1,6 +1,5 @@
 const log4js = require('log4js');
 const path = require('path');
-const dirRx = new RegExp(__dirname);
 const nmRx = new RegExp('node_modules/');
 const rx = /(\(|)([^\s]+?)\d/;
 
@@ -22,6 +21,8 @@ exports.withTrace = function (rootDir) {
     let version;
 
     rootDir || console.error(`'rootDir' was not given. Using ${__dirname}.`);
+
+    const dirRx = new RegExp(rootDir);
 
     try {
         version = require(path.join(rootDir || __dirname, 'package.json')).version;
